@@ -20,3 +20,4 @@ config/master.key
 public/packs
 yarn-error.log
 
+/public/system
