@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   
   expose(:artists) { Artist.order('name ASC') }
 
-  expose(:artist) do
+  expose(:artist, attributes: :artist_params) do
     unless params[:id].nil?
       Artist.find(params[:id])
     else
@@ -11,7 +11,7 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    artist = Artist.new(artist_params)
+    self.artist = Artist.new(artist_params)
 
     respond_to do |format|
       if artist.save
