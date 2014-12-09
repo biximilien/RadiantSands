@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'events#index'
+  root to: 'root#home'
+
+  resources :csv_calendars
 
   devise_for :users, controllers: { registrations: 'users/registrations',
                                     sessions: 'users/sessions',
@@ -7,13 +9,14 @@ Rails.application.routes.draw do
 
   resources :artists
   resources :venues
-  resources :events, path: '/', except: [ :edit, :destroy ]
+  resources :events, except: [ :edit, :destroy ]
 
   scope '/admin' do
     get 'dashboard', to: 'dashboard#home'
+    get 'load_google_calendars', to: 'dashboard#load_google_calendars'
 
     resources :users
-    resources :ads, module: :admin
+    resources :ads
     resources :events
   end
 end

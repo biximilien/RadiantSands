@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"redirect_to"
+			],
+			[
+				"file-up",
+				"file-upload-btn"
+			],
+			[
 				"event",
 				"event_id"
 			],
@@ -34,10 +42,6 @@
 			[
 				"eve",
 				"event_recurring"
-			],
-			[
-				"re",
-				"recurring_events"
 			],
 			[
 				"Re",
@@ -510,68 +514,72 @@
 			[
 				"sani",
 				"sanitize_name"
-			],
-			[
-				"font-",
-				"font-size"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/models/user.rb",
-			"settings":
-			{
-				"buffer_size": 983,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/users_controller.rb",
-			"settings":
-			{
-				"buffer_size": 1380,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/layouts/application.html.erb",
-			"settings":
-			{
-				"buffer_size": 1066,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/helpers/application_helper.rb",
-			"settings":
-			{
-				"buffer_size": 580,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/dashboard_controller.rb",
-			"settings":
-			{
-				"buffer_size": 114,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "db/migrate/20141207033658_add_authorized_to_events.rb",
-			"settings":
-			{
-				"buffer_size": 137,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/views/dashboard/home.html.erb",
 			"settings":
 			{
-				"buffer_size": 237,
+				"buffer_size": 1177,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/ads/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 793,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/application.js",
+			"settings":
+			{
+				"buffer_size": 3783,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/ads_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1292,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 605,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/layouts/_advertisement.html.erb",
+			"settings":
+			{
+				"buffer_size": 352,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/csv_calendars/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 808,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/layouts/_sidebar.html.erb",
+			"settings":
+			{
+				"buffer_size": 336,
 				"line_ending": "Windows"
 			}
 		}
@@ -628,11 +636,40 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Coldfury/Documents/radiant-sands/app/views/dashboard/home.html.erb",
-		"/C/Users/Coldfury/Documents/radiant-sands/lib/tasks/calendar.rake",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/views/layouts/application.html.erb",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/views/layouts/_navbar.html.erb",
+		"/C/Users/Coldfury/Documents/poexplorer/lib/tasks/players.rake",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/application_controller.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/javascripts/application.js",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/dashboard_controller.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/views/dashboard/load_google_calendars.html.erb",
+		"/C/Users/Coldfury/Documents/radiant-sands/config/routes.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/root_controller.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/models/user.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/models/user_group.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/models/role.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/views/admin/ads/_form.html.erb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/ads_controller.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/models/ad.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141209042729_rename_table_admin_ads_to_ads.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/views/csv_calendars/_form.html.erb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/views/csv_calendars/_csv_calendar.html.erb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/csv_calendars_controller.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/views/layouts/application.html.erb",
+		"/C/Users/Coldfury/Documents/radiant-sands/Gemfile",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/views/dashboard/home.html.erb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/users_controller.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/events_controller.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/venues_controller.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/artists_controller.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/admin/ads_controller.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141207194620_create_csv_calendars.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/models/csv_calendar.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/models/admin/ad.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/stylesheets/application.css",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/helpers/application_helper.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141207033658_add_authorized_to_events.rb",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/stylesheets/artists.css.scss",
+		"/C/Users/Coldfury/Documents/radiant-sands/lib/tasks/calendar.rake",
+		"/C/Users/Coldfury/Documents/radiant-sands/app/views/layouts/_navbar.html.erb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/models/event.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/models/venue.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/models/artist.rb",
@@ -640,30 +677,19 @@
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/events/_event.html.erb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/events/show.html.erb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/events/_filters.html.erb",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/helpers/application_helper.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/events/_form.html.erb",
-		"/C/Users/Coldfury/Documents/radiant-sands/Gemfile",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/stylesheets/application.css",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/stylesheets/bootstrap_and_overrides.css.scss",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/javascripts/application.js",
 		"/C/Users/Coldfury/Documents/demoriat/app/helpers/application_helper.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141202213040_add_gcal_and_gcal_id_to_events.rb",
 		"/C/Users/Coldfury/Downloads/basic.ics",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/events_controller.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141130074323_add_recurring_to_events.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/models/recurring_event.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/models/event_type.rb",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/users_controller.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/users/registrations_controller.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/users/sessions_controller.rb",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/models/user.rb",
-		"/C/Users/Coldfury/Documents/radiant-sands/config/routes.rb",
 		"/C/Users/Coldfury/Downloads/config.php",
 		"/C/Users/Coldfury/Downloads/index.php",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/models/user_group.rb",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/models/role.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/db/seeds.rb",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/dashboard_controller.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/lib/crawler/engine.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/config/unicorn.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141119041102_add_groups_to_users.rb",
@@ -688,7 +714,6 @@
 		"/C/Users/Coldfury/Documents/radiant-sands/config/initializers/devise.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/layouts/_sidebar.html.erb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/layouts/_banner.html.erb",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/artists_controller.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141109023135_add_admin_to_users.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/users/_form.html.erb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/users/edit.html.erb",
@@ -696,7 +721,6 @@
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/users/index.json.jbuilder",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/users/show.html.erb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/users/show.json.jbuilder",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/venues_controller.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/venues/index.html.erb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/artists/index.html.erb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/artists/edit.html.erb",
@@ -711,7 +735,6 @@
 		"/C/Users/Coldfury/Documents/radiant-sands/app/models/referrer.rb",
 		"/C/Users/Coldfury/Desktop/disp.txt",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/stylesheets/venues.css.scss",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/stylesheets/artists.css.scss",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/events/index.json.jbuilder",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/devise/sessions/new.html.erb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/devise/shared/_links.erb",
@@ -732,30 +755,15 @@
 		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/stylesheets/ads.css.scss",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/views/admin/ads/show.html.erb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/javascripts/admin/ads.js.coffee",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/models/admin/ad.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141024120854_add_datatypes_to_events.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/javascripts/ads.js.coffee",
 		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141015033137_create_admin_ads.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/config/environments/development.rb",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/views/admin/ads/_form.html.erb",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/controllers/admin/ads_controller.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/.gitignore",
 		"/C/Users/Coldfury/Documents/radiant-sands/config/initializers/paperclip.rb",
 		"/C/Users/Coldfury/Documents/radiant-sands/config/environments/production.rb",
 		"/C/Users/Coldfury/Downloads/credentials.csv",
-		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141014180241_add_cover_to_events.rb",
-		"/C/Users/Coldfury/Downloads/Pinup Data - Aug 31-Sept 6 - Sheet1.csv",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/assets/stylesheets/users.css.scss",
-		"/C/Users/Coldfury/Documents/radiant-sands/app/views/events/show.json.jbuilder",
-		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141011053414_add_devise_to_users.rb",
-		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141006170818_create_events.rb",
-		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141011053345_create_users.rb",
-		"/C/Users/Coldfury/Documents/demoriat/app/views/layouts/_sidebar.html.haml",
-		"/C/Users/Coldfury/Documents/demoriat/app/assets/stylesheets/global.css.scss",
-		"/C/Users/Coldfury/Documents/demoriat/app/assets/javascripts/application.js",
-		"/C/Users/Coldfury/Documents/demoriat/app/assets/stylesheets/layout.css.scss",
-		"/C/Users/Coldfury/Documents/demoriat/app/assets/stylesheets/bootstrap_and_overrides.css.scss",
-		"/C/Users/Coldfury/Documents/demoriat/lib/demoriat/alert.rb"
+		"/C/Users/Coldfury/Documents/radiant-sands/db/migrate/20141014180241_add_cover_to_events.rb"
 	],
 	"find":
 	{
@@ -774,6 +782,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ADMIN",
+			"admin_",
+			"File",
+			"file",
+			"@ad",
+			"puts",
+			"spin",
+			"rake",
 			"strip_tags",
 			"strup",
 			".text",
@@ -893,15 +909,7 @@
 			"max",
 			"GyX",
 			"AcX",
-			"self",
-			"Enterprise",
-			"enterprise",
-			"enterprises",
-			"@campuses",
-			"@person",
-			"self",
-			"comment",
-			"@"
+			"self"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -919,79 +927,23 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/models/user.rb",
+					"file": "app/views/dashboard/home.html.erb",
 					"settings":
 					{
-						"buffer_size": 983,
+						"buffer_size": 1177,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								622,
-								622
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/controllers/users_controller.rb",
-					"settings":
-					{
-						"buffer_size": 1380,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								276,
-								276
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/layouts/application.html.erb",
-					"settings":
-					{
-						"buffer_size": 1066,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15,
-								15
+								258,
+								258
 							]
 						],
 						"settings":
@@ -1007,19 +959,103 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/helpers/application_helper.rb",
+					"buffer": 1,
+					"file": "app/views/ads/_form.html.erb",
 					"settings":
 					{
-						"buffer_size": 580,
+						"buffer_size": 793,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								548,
-								548
+								684,
+								684
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/assets/javascripts/application.js",
+					"settings":
+					{
+						"buffer_size": 3783,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3745,
+								3745
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1261.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/ads_controller.rb",
+					"settings":
+					{
+						"buffer_size": 1292,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								325,
+								325
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 738.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "config/routes.rb",
+					"settings":
+					{
+						"buffer_size": 605,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								573,
+								573
 							]
 						],
 						"settings":
@@ -1035,50 +1071,26 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/controllers/dashboard_controller.rb",
-					"settings":
-					{
-						"buffer_size": 114,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								102,
-								102
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 5,
-					"file": "db/migrate/20141207033658_add_authorized_to_events.rb",
+					"file": "app/views/layouts/_advertisement.html.erb",
 					"settings":
 					{
-						"buffer_size": 137,
+						"buffer_size": 352,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								126,
-								126
+								73,
+								73
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1088,18 +1100,46 @@
 				},
 				{
 					"buffer": 6,
-					"file": "app/views/dashboard/home.html.erb",
+					"file": "app/views/csv_calendars/_form.html.erb",
 					"settings":
 					{
-						"buffer_size": 237,
+						"buffer_size": 808,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								759,
+								759
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/layouts/_sidebar.html.erb",
+					"settings":
+					{
+						"buffer_size": 336,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								197,
+								197
 							]
 						],
 						"settings":
