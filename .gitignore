@@ -23,3 +23,4 @@ yarn-error.log
 /public/system
 
 .sublime*
+.DS_Store

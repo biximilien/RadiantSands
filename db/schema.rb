@@ -11,9 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223065841) do
+ActiveRecord::Schema.define(version: 20150410061410) do
 
-  create_table "ads", force: true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "admin_ads", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -23,13 +26,7 @@ ActiveRecord::Schema.define(version: 20150223065841) do
     t.string   "url"
   end
 
-  create_table "artists", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "banners", force: true do |t|
+  create_table "admin_banners", force: true do |t|
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -37,11 +34,33 @@ ActiveRecord::Schema.define(version: 20150223065841) do
     t.string   "url"
   end
 
-  create_table "csv_calendars", force: true do |t|
+  create_table "admin_csv_calendars", force: true do |t|
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "admin_lists", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "url",        default: "", null: false
+    t.string   "title",      default: "", null: false
+  end
+
+  create_table "admin_sources", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "imported_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "reimport"
+  end
+
+  create_table "artists", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -63,24 +82,27 @@ ActiveRecord::Schema.define(version: 20150223065841) do
     t.integer  "event_type_id"
     t.integer  "artist_id"
     t.integer  "referrer_id"
-    t.boolean  "recurring",     default: false
+    t.boolean  "recurring",       default: false
     t.boolean  "gcal"
     t.string   "uid"
-    t.boolean  "authorized"
-    t.string   "day_of_week",   default: "",      null: false
-    t.string   "type",          default: "Event", null: false
+    t.string   "day_of_week",     default: "",      null: false
+    t.string   "type",            default: "Event", null: false
     t.integer  "list_id"
+    t.string   "title"
+    t.datetime "start_time"
+    t.string   "url"
+    t.integer  "duplicate_of_id"
+    t.datetime "end_time"
+    t.string   "rrule"
+    t.text     "venue_details"
+    t.integer  "organization_id"
+    t.boolean  "locked",          default: false
+    t.integer  "source_id"
+    t.boolean  "authorized",      default: false
   end
 
-  add_index "events", ["day_of_week"], name: "index_events_on_day_of_week"
-  add_index "events", ["uid"], name: "index_events_on_uid", unique: true
-
-  create_table "lists", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "url",        default: "", null: false
-    t.string   "title",      default: "", null: false
-  end
+  add_index "events", ["day_of_week"], name: "index_events_on_day_of_week", using: :btree
+  add_index "events", ["uid"], name: "index_events_on_uid", unique: true, using: :btree
 
   create_table "referrers", force: true do |t|
     t.string   "name"
@@ -94,6 +116,35 @@ ActiveRecord::Schema.define(version: 20150223065841) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sources", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.datetime "imported_at"
+    t.boolean  "reimport"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "event_type_id"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id",        null: false
+    t.integer  "taggable_id",   null: false
+    t.string   "taggable_type", null: false
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context"
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string "name", null: false
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "user_groups", force: true do |t|
     t.datetime "created_at"
@@ -122,8 +173,8 @@ ActiveRecord::Schema.define(version: 20150223065841) do
     t.integer  "user_group_id"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "venues", force: true do |t|
     t.string   "name"
@@ -131,6 +182,35 @@ ActiveRecord::Schema.define(version: 20150223065841) do
     t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
+    t.text     "description"
+    t.string   "url"
+    t.string   "street_address"
+    t.string   "locality"
+    t.integer  "duplicate_of_id"
+    t.string   "region"
+    t.string   "postal_code"
+    t.string   "country"
+    t.decimal  "latitude",        precision: 7, scale: 4
+    t.decimal  "longitude",       precision: 7, scale: 4
+    t.string   "email"
+    t.string   "telephone"
+    t.boolean  "closed",                                  default: false
+    t.boolean  "wifi",                                    default: false
+    t.text     "access_notes"
+    t.integer  "events_count"
+    t.integer  "source_id"
   end
+
+  create_table "versions", force: true do |t|
+    t.string   "item_type",  null: false
+    t.integer  "item_id",    null: false
+    t.string   "event",      null: false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
 end
