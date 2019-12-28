@@ -1,9 +1,7 @@
-class CreateAdminAds < ActiveRecord::Migration
+class CreateAdminAds < ActiveRecord::Migration[4.2]
   def change
     create_table :admin_ads do |t|
       t.timestamps
     end
-
-    add_attachment :admin_ads, :image
   end
 end

@@ -8,7 +8,9 @@ class Admin::List < ActiveRecord::Base
   before_save -> { self.url = url.downcase }
 
   def to_s
-    "#{ title.titleize }"
+    title.titleize
+  rescue NoMethodError
+    ''
   end
 
   alias_method :name, :to_s

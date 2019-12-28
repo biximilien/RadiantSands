@@ -1,4 +1,4 @@
-class AddEventTypeIDtoSources < ActiveRecord::Migration
+class AddEventTypeIdToSources < ActiveRecord::Migration[4.2]
   def change
   	add_column :sources, :event_type_id, :integer
   end

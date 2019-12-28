@@ -1,4 +1,4 @@
-class CreateAdminSources < ActiveRecord::Migration
+class CreateAdminSources < ActiveRecord::Migration[4.2]
   def change
     create_table :admin_sources do |t|
     t.string   "title"

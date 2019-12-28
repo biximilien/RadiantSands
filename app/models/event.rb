@@ -1,3 +1,5 @@
+require 'csv'
+
 # == Schema Information
 # Schema version: 20110604174521
 #
@@ -23,12 +25,6 @@
 #
 # A model representing a calendar event.
 class Event < ActiveRecord::Base
-  require 'csv'
-  has_paper_trail
-  acts_as_taggable
-
-  xss_foliate :strip => [:title], :sanitize => [:description, :venue_details]
-  include DecodeHtmlEntitiesHack
 
   # Associations
   belongs_to :venue, :counter_cache => true
@@ -47,14 +43,7 @@ class Event < ActiveRecord::Base
     :allow_blank => true,
     :allow_nil => true
 
-  validates :title, :description, :url, blacklist: true
-
   before_destroy :verify_lock_status
-
-  # Duplicates
-  include DuplicateChecking
-  duplicate_checking_ignores_attributes    :source_id, :version, :venue_id
-  duplicate_squashing_ignores_associations :tags, :base_tags, :taggings
 
   # Named scopes
   scope :after_date, lambda { |date|

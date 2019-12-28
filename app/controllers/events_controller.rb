@@ -1,12 +1,11 @@
 class EventsController < ApplicationController
-  protect_from_forgery except: :index
 
   before_action :authenticate_user!, only: [ :edit, :update, :destroy ]
 
-  expose(:types) { EventType.order('name ASC') }
-  expose(:events) { params[:filter].nil? ? find_all_events : find_filtered_events }
-  expose(:event, attributes: :event_params) { params[:id].nil? ? Event.new : Event.find(params[:id]) }
-  expose(:date) { params[:date].nil? ? Date.today : Date.parse(params[:date]) }
+  before_action :set_types
+  before_action :set_events
+  before_action :set_event
+  before_action :set_date
 
   def create
     self.event = Event.new(event_params)
@@ -48,9 +47,44 @@ class EventsController < ApplicationController
     end
   end
 
+  protected
+
+  def set_types
+    @types = EventType.order('name ASC')
+  end
+
+  def set_events
+    if params[:filter].blank?
+      @events = find_all_events
+    else
+      @events = find_filtered_events
+    end
+  end
+
+  def set_event
+    if params[:id].blank?
+      @event = Event.new
+    else
+      @event = Event.find(params[:id])
+    end
+  end
+
+  def set_date
+    if params[:date].blank?
+      @date = Date.today
+    else
+      @date = Date.parse(params[:date])
+    end
+  end
+
   private
+
     def event_params
-      params.require(:event).permit(:description, :price, :referrer, :authorized, :source, :title, :organization, :start_time, :url, :duplicate_of, :end_time, :rrule, :venue_details, :venue_id, :artist_id, :event_type_id)
+      params.require(:event).permit(
+        :description, :price, :referrer, :authorized, :source, :title,
+        :organization, :start_time, :url, :duplicate_of, :end_time, :rrule,
+        :venue_details, :venue_id, :artist_id, :event_type_id
+      )
     end
 
     def find_all_events
@@ -65,4 +99,5 @@ class EventsController < ApplicationController
         Date.today, EventType.find_by( name: params[:filter] ), true
       ).order( 'start_time ASC' ).page( params[:page] )
     end
+
 end

@@ -7,7 +7,7 @@
           <span> All</span>
         <% end %>
       </li>
-    <% types.each do |type| %>
+    <% @types.each do |type| %>
       <% next if type.name.nil? or type.name.empty? %>
       <li>
         <%= link_to events_path( filter: type.name ) do %>

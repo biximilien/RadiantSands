@@ -1,4 +1,4 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateEvents < ActiveRecord::Migration[4.2]
   def change
     create_table :events do |t|
       # Event title
@@ -15,20 +15,11 @@ class CreateEvents < ActiveRecord::Migration
       # Event location
       t.string :location
 
-      # Authorized
-      t.boolean :authorized, default: false
-
       # Event type
       t.string :type, null: false, default: 'Event'
 
-      # Cover image
-      t.add_attachment :cover
-
       # Price
       t.integer :price
-
-      # Source URL
-      t.string :url
 
       # Referrer
       t.string :referrer

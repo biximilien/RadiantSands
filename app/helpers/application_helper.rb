@@ -15,7 +15,7 @@ module ApplicationHelper
       error: "alert-danger",
       alert: "alert-warning",
       notice: "alert-info" }[flash_type.to_sym] || flash_type.to_s
-  end 
+  end
 
     def focus_on(xpath_query)
     insert_javascript "$('#{xpath_query}').focus();"
@@ -32,5 +32,5 @@ module ApplicationHelper
       HERE
     end
   end
-  
+
 end

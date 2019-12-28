@@ -1,16 +1,8 @@
 class ArtistsController < ApplicationController
 
   before_action :authenticate_user!, only: [ :edit, :update, :destroy ]
-  
-  expose(:artists) { Artist.order('name ASC') }
 
-  expose(:artist, attributes: :artist_params) do
-    unless params[:id].nil?
-      Artist.find(params[:id])
-    else
-      Artist.new
-    end
-  end
+  before_action :set_artist, :set_artists
 
   def create
     self.artist = Artist.new(artist_params)
@@ -46,9 +38,24 @@ class ArtistsController < ApplicationController
     end
   end
 
-  private
-    
-    def artist_params
-      params.require(:artist).permit(:name)
+  protected
+
+  def set_artists
+    @artists = Artist.order('name ASC')
+  end
+
+  def set_artist
+    unless params[:id].nil?
+      @artist = Artist.find(params[:id])
+    else
+      @artist = Artist.new
     end
+  end
+
+  private
+
+  def artist_params
+    params.require(:artist).permit(:name)
+  end
+
 end

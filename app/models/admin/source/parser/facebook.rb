@@ -1,7 +1,10 @@
 class Admin::Source::Parser::Facebook < Admin::Source::Parser
   self.label = :Facebook
 
-  # NOTE: This pattern's goal is to get the Facebook event identifier in the first capture group, so the "(?:foo)" non-capturing group syntax is used to match but not capture those groups -- search the web for "ruby class rexep non-capturing" for details.
+  # NOTE: This pattern's goal is to get the Facebook event identifier in the
+  # first capture group, so the "(?:foo)" non-capturing group syntax is used to
+  # match but not capture those groups -- search the web for "ruby class rexep
+  # non-capturing" for details.
   self.url_pattern = %r{(?x)              # Ignore regexp whitespace and comments
     ^
       (?:https?://)?                      # Optional http URI prefix
@@ -61,4 +64,3 @@ class Admin::Source::Parser::Facebook < Admin::Source::Parser
     venue_or_duplicate(venue)
   end
 end
-

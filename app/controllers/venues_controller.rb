@@ -1,16 +1,8 @@
 class VenuesController < ApplicationController
 
   before_action :authenticate_user!, only: [ :edit, :update, :destroy ]
-  
-  expose(:venues) { Venue.order('name ASC') }
 
-  expose(:venue, attributes: :venue_params) do 
-    unless params[:id].nil?
-      Venue.find(params[:id])
-    else
-      Venue.new
-    end
-  end
+  before_action :set_venues, :set_venue
 
   def create
     self.venue = Venue.new(venue_params)
@@ -46,9 +38,24 @@ class VenuesController < ApplicationController
     end
   end
 
-  private
-    
-    def venue_params
-      params.require(:venue).permit(:name, :address, :city, :title, :description, :url, :street_address, :locality, :duplicate_of_id, :region, :postal_code, :country, :latitude, :longitude, :email, :telephone, :closed, :wifi, :access_notes, :source_id)
+  protected
+
+  def set_venues
+    @venues = Venue.order('name ASC')
+  end
+
+  def set_venue
+    unless params[:id].nil?
+      @venue = Venue.find(params[:id])
+    else
+      @venue = Venue.new
     end
+  end
+
+  private
+
+  def venue_params
+    params.require(:venue).permit(:name, :address, :city, :title, :description, :url, :street_address, :locality, :duplicate_of_id, :region, :postal_code, :country, :latitude, :longitude, :email, :telephone, :closed, :wifi, :access_notes, :source_id)
+  end
+
 end

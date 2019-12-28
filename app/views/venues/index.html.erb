@@ -1,8 +1,8 @@
-<% venues.each_slice(1) do |slice| %>
+<% @venues.each_slice(1) do |slice| %>
   <div class="row">
     <% slice.each do |venue| %>
       <% next if venue.name.nil? || venue.name.empty? %>
-      
+
       <% if current_user.nil? || !current_user.admin? %>
         <%= render 'venues/index/venue', venue: venue %>
       <% else %>

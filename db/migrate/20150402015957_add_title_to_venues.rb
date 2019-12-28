@@ -1,4 +1,4 @@
-class AddTitleToVenues < ActiveRecord::Migration
+class AddTitleToVenues < ActiveRecord::Migration[4.2]
   def change
   	  	change_table :venues do |t|
   		t.string :title

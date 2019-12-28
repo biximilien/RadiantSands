@@ -1,4 +1,4 @@
-class AddTitleToEvents < ActiveRecord::Migration
+class AddTitleToEvents < ActiveRecord::Migration[4.2]
   def change
   	change_table :events do |t|
   		t.string :title

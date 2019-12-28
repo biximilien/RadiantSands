@@ -1,11 +1,9 @@
-class CreateBanners < ActiveRecord::Migration
+class CreateBanners < ActiveRecord::Migration[4.2]
   def self.up
     create_table :banners
-    add_attachment :banners, :image
   end
 
   def self.down
-    remove_attachment :banners, :image
     drop_table :banners
   end
 end

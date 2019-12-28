@@ -1,12 +1,5 @@
 class Venue < ActiveRecord::Base
-  include StripWhitespace
 
-  has_paper_trail
-  acts_as_taggable
-
-  xss_foliate :sanitize => [:description, :access_notes]
-  include DecodeHtmlEntitiesHack
-  
   has_many :events, dependent: :nullify
   def future_events; events.future_with_venue; end
   def past_events; events.past_with_venue; end
@@ -16,8 +9,6 @@ class Venue < ActiveRecord::Base
 
   before_save :to_lower_case
 
-  # Triggers
-  strip_whitespace! :title, :description, :address, :url, :street_address, :locality, :region, :postal_code, :country, :email, :telephone
   before_save :geocode!
 
   # Validations
@@ -34,13 +25,6 @@ class Venue < ActiveRecord::Base
     :in => -180..180,
     :allow_nil => true,
     :message => "must be between -180 and 180"
-
-  validates :title, :description, :address, :url, :street_address, :locality, :region, :postal_code, :country, :email, :telephone, blacklist: true
-
-  # Duplicates
-  include DuplicateChecking
-  duplicate_checking_ignores_attributes    :source_id, :version, :closed, :wifi, :access_notes
-  duplicate_squashing_ignores_associations :tags, :base_tags, :taggings
 
   # Named scopes
   scope :masters,          -> { where(duplicate_of_id: nil).includes(:source, :events, :tags, :taggings) }
@@ -63,8 +47,8 @@ class Venue < ActiveRecord::Base
     else
       kind = %w[all any].include?(type) ? type.to_sym : type.split(',').map(&:to_sym)
 
-      return self.find_duplicates_by(kind, 
-        :grouped  => true, 
+      return self.find_duplicates_by(kind,
+        :grouped  => true,
         :where    => 'a.duplicate_of_id IS NULL AND b.duplicate_of_id IS NULL'
       )
     end

@@ -1,7 +1,6 @@
-class CreateCsvCalendars < ActiveRecord::Migration
+class CreateCsvCalendars < ActiveRecord::Migration[4.2]
   def change
     create_table :csv_calendars do |t|
-      t.attachment :file
       t.timestamps
     end
   end
