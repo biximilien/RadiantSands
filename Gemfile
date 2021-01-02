@@ -17,6 +17,8 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+gem "json", ">= 2.3.0"
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -57,15 +59,16 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection', '~> 0.1'
 
 # AWS
-gem 'aws-sdk', '~> 1.5.7'
+gem 'aws-sdk'
 
 # Pagination and infinite scrolling
 gem 'kaminari'
 
 # Nokogiri XML and HTML parser
-gem 'nokogiri'
+gem "nokogiri", ">= 1.11.0.rc4"
 
 # Sidekiq for process handling
 gem 'sidekiq'
